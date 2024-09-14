@@ -1,0 +1,179 @@
+/* General styling for the page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-y: scroll;
+    background-color: #FFD6E8; /* Light background color to match gradient */
+}
+
+/* Specific container styling */
+.teachers-day-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 700px;
+    background: linear-gradient(to bottom right, #FFD6E8, #FF9AA2);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto; /* Center the container on the page */
+}
+
+.name-entry {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    padding: 20px;
+}
+
+.name-entry input {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 2px solid #FF6F61;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: calc(100% - 22px);
+}
+
+.name-entry button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.name-entry button:hover {
+    background-color: #FF3E30;
+}
+
+.mailbox {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    background-color: #FF6F61;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: bounceIn 2s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.card-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-inside p {
+    font-size: 1.5em;
+    color: #FF6F61;
+    font-weight: bold;
+}
+
+.card {
+    display: none;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.card h1 {
+    font-size: 2.5em;
+    color: #FF6F61;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.media-section {
+    margin-top: 30px;
+}
+
+.media-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.glitter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.glitter span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FFDF00;
+    animation: glitterEffect 2s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+@keyframes glitterEffect {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(300px); }
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FF6F61;
+    padding: 5px 0;
+    color: white;
+    text-align: center;
+}
+
+footer p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
