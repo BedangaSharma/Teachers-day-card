@@ -37,13 +37,13 @@ This project is a special Teachers' Day webpage designed to celebrate and apprec
    - For local development, you can simply use the `index.html` file.
    - For online deployment, upload the files to your web server or hosting service.
 
-Code Explanation
+## Code Explanation
 
 - **HTML**: Contains the structure of the webpage, including sections for name entry, mailbox, card, and footer.
 - **CSS**: Provides styles for layout, animations, and visual effects. Embedded in the `<style>` tag within the HTML file.
 - **JavaScript**: Manages user interactions, including name submission and card display. Embedded in the `<script>` tag within the HTML file.
 
-Credits
+## Credits
 
 - **Background Music**: https://www.dropbox.com/scl/fi/hox5cnbo3j52pg021187m/Verse-1.mp3?rlkey=kpvdqd4b0o6apqf47k06jyf4l&st=9jtd9oy3&raw=1
 - **Images**: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDE5hXEKALZqsqjJ2Pwn0vXo8r9po79Myfc8U97HitugsJP2AVcGtWDg6-imV5IjLinazIsn98VvHQ2L_kI3UQNEIVoqseHkGVzAnd1B6pDHPIGJePuX4U8IBymUo24FBc8izwm-KL-Qp8x6FHjQP8-ptKMBL_ZkQtY6GOWvNNUk4-SifE-14Pq0_ye8I/s600/5812580.jpg
