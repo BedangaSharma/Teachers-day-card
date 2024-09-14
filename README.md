@@ -48,6 +48,13 @@ Credits
 - **Background Music**: https://www.dropbox.com/scl/fi/hox5cnbo3j52pg021187m/Verse-1.mp3?rlkey=kpvdqd4b0o6apqf47k06jyf4l&st=9jtd9oy3&raw=1
 - **Images**: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDE5hXEKALZqsqjJ2Pwn0vXo8r9po79Myfc8U97HitugsJP2AVcGtWDg6-imV5IjLinazIsn98VvHQ2L_kI3UQNEIVoqseHkGVzAnd1B6pDHPIGJePuX4U8IBymUo24FBc8izwm-KL-Qp8x6FHjQP8-ptKMBL_ZkQtY6GOWvNNUk4-SifE-14Pq0_ye8I/s600/5812580.jpg
 
+## Copyright
+Use this for unlimited free use
+<!-- Footer Section -->
+<footer style="background-color: #FF6F61; color: white; text-align: center; padding: 10px 0; position: absolute; bottom: 0; width: 100%; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);">
+    <p>&copy; 2024 Edu Sharma. All rights reserved. Unauthorized use or reproduction of this code without permission is prohibited. For permissions, please contact <a href="https://edusharma.blogspot.com" style="color: white; text-decoration: underline;">https://edusharma.blogspot.com</a>.</p>
+</footer>
+
 
 
 Contact
