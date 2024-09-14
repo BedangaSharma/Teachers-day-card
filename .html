@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teachers' Day!</title>
+    <style>
+        /* General styling for the page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow-y: scroll;
+            background-color: #FFD6E8; /* Light background color to match gradient */
+        }
+
+        /* Specific container styling */
+        .teachers-day-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 700px;
+            background: linear-gradient(to bottom right, #FFD6E8, #FF9AA2);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 0 auto; /* Center the container on the page */
+        }
+
+        .name-entry {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .name-entry input {
+            padding: 10px;
+            font-size: 1.2em;
+            border: 2px solid #FF6F61;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: calc(100% - 22px);
+        }
+
+        .name-entry button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .name-entry button:hover {
+            background-color: #FF3E30;
+        }
+
+        .mailbox {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 200px;
+            background-color: #FF6F61;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: bounceIn 2s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .card-inside {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .card-inside p {
+            font-size: 1.5em;
+            color: #FF6F61;
+            font-weight: bold;
+        }
+
+        .card {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .card h1 {
+            font-size: 2.5em;
+            color: #FF6F61;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .media-section {
+            margin-top: 30px;
+        }
+
+        .media-section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .glitter {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            display: none;
+            top: 0;
+            left: 0;
+        }
+
+        .glitter span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFDF00;
+            animation: glitterEffect 2s ease-in-out infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes glitterEffect {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(300px); }
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #FF6F61;
+            padding: 5px 0;
+            color: white;
+            text-align: center;
+        }
+
+        footer p a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="teachers-day-container">
+        <!-- Name entry section -->
+        <div class="name-entry" id="nameEntrySection">
+            <h1>Enter Your Name Ma'am/ Sir</h1>
+            <input type="text" id="teacherNameInput" placeholder="Teacher's Name">
+            <button onclick="startAnimation()">Submit</button>
+        </div>
+
+        <!-- Mailbox with loading animation -->
+        <div class="mailbox" id="mailbox">
+            <div class="card-inside" onclick="openCard()">
+                <p>Tap Here to Open the Card!</p>
+            </div>
+        </div>
+
+        <!-- Glitter effect -->
+        <div class="glitter" id="glitterEffect">
+            <span style="top: 20%; left: 40%; animation-delay: 0s;"></span>
+            <span style="top: 60%; left: 20%; animation-delay: 0.5s;"></span>
+            <span style="top: 50%; left: 80%; animation-delay: 1s;"></span>
+            <span style="top: 80%; left: 60%; animation-delay: 1.5s;"></span>
+        </div>
+
+        <!-- Main Card for Teachers' Day Message -->
+        <div class="card" id="messageCard">
+            <h1>Happy Teachers' Day!</h1>
+            <p>Dear <span id="teacherName">Teacher</span>,</p>
+            <p>Thank you for being the guiding light and inspiring us to do well in our studies. Your dedication and wisdom have made all the difference in our lives!</p>
+            
+            <!-- Song and Images Section -->
+            <div class="media-section">
+                <audio id="backgroundSong" autoplay loop>
+                    <source src="https://www.dropbox.com/scl/fi/hox5cnbo3j52pg021187m/Verse-1.mp3?rlkey=kpvdqd4b0o6apqf47k06jyf4l&st=9jtd9oy3&raw=1" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDE5hXEKALZqsqjJ2Pwn0vXo8r9po79Myfc8U97HitugsJP2AVcGtWDg6-imV5IjLinazIsn98VvHQ2L_kI3UQNEIVoqseHkGVzAnd1B6pDHPIGJePuX4U8IBymUo24FBc8izwm-KL-Qp8x6FHjQP8-ptKMBL_ZkQtY6GOWvNNUk4-SifE-14Pq0_ye8I/s600/5812580.jpg">
+                    <img alt="Happy Teacher's Day" width="600" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDE5hXEKALZqsqjJ2Pwn0vXo8r9po79Myfc8U97HitugsJP2AVcGtWDg6-imV5IjLinazIsn98VvHQ2L_kI3UQNEIVoqseHkGVzAnd1B6pDHPIGJePuX4U8IBymUo24FBc8izwm-KL-Qp8x6FHjQP8-ptKMBL_ZkQtY6GOWvNNUk4-SifE-14Pq0_ye8I/s600/5812580.jpg">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer with non-removable copyright line -->
+    <footer>
+        <p>&copy; 2024 Edu Sharma. All rights reserved. <a href="https://edusharma.blogspot.com/p/happy-teachers-day-themed-opening.html">Happy Teachers' Day!</a></p>
+    </footer>
+
+    <script>
+        // Function to handle the name submission and start animation
+        function startAnimation() {
+            const teacherNameInput = document.getElementById("teacherNameInput").value;
+            
+            if (teacherNameInput) {
+                // Replace placeholder with actual teacher name
+                document.getElementById("teacherName").innerText = teacherNameInput;
+                
+                // Hide the name entry section
+                document.getElementById("nameEntrySection").style.display = "none";
+                
+                // Show the mailbox section
+                document.getElementById("mailbox").style.display = "block";
+            }
+        }
+
+        // Function to open the card and display the message
+        function openCard() {
+            // Hide the mailbox section
+            document.getElementById("mailbox").style.display = "none";
+            
+            // Show the glitter effect and card with message
+            document.getElementById("glitterEffect").style.display = "block";
+            document.getElementById("messageCard").style.display = "block";
+        }
+    </script>
+
+
+  <footer>
+        <p style="text-align: center; font-size: 0.8em; color: #555;">
+            &copy; <a href="https://edusharma.blogspot.com/p/happy-teachers-day-themed-opening.html" target="_blank" style="color: #FF6F61;">EduSharma - Happy Teachers' Day</a> 
+        </p>
+  </footer>
+  
+</body>
+</html>
